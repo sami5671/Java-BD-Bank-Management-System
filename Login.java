@@ -7,6 +7,12 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class Login extends JFrame implements ActionListener{
+    //==============GLOBAL DECLARATION OF BUTTONS and TEXT FIELDS==================
+    JButton login, signup, clear;
+    JTextField cardTextField;
+    JPasswordField pinTextField;
+    //==============GLOBAL DECLARATION OF BUTTONS==================
+
     Login(){  //its a constructor
         setTitle("BANGLADESH CENTRAL BANK");
         setLayout(null);
@@ -33,8 +39,9 @@ public class Login extends JFrame implements ActionListener{
         cardNo.setBounds(120, 150,700, 40);
         add(cardNo);
 
-        JTextField cardTextField = new JTextField();
+        cardTextField = new JTextField();
         cardTextField.setBounds(300, 150, 250, 30);
+        cardTextField.setFont(new Font("Arial", Font.BOLD, 16));
         add(cardTextField);
         // label 3
         JLabel pin = new JLabel("PIN No: ");
@@ -42,23 +49,27 @@ public class Login extends JFrame implements ActionListener{
         pin.setBounds(120, 220,700, 30);
         add(pin);
 
-        JTextField pinTextField = new JTextField();
+        pinTextField = new JPasswordField();
         pinTextField.setBounds(300, 220, 250, 30);
+        pinTextField.setFont(new Font("Arial", Font.BOLD, 16));
         add(pinTextField);
 
 
         //added the button of Sign In and clear 
-        JButton login = new JButton("SIGN IN");
+        login = new JButton("SIGN IN");
         login.setBounds(300, 300, 100, 30);
+        login.addActionListener(this);
         add(login);
 
         //clear input field
-        JButton clear = new JButton("CLEAR");
+        clear = new JButton("CLEAR");
         clear.setBounds(430, 300, 100, 30);
+        clear.addActionListener(this);
         add(clear);
         //Added Sign up button
-        JButton signup = new JButton("SIGN UP");
+        signup = new JButton("SIGN UP");
         signup.setBounds(300, 350, 230, 30);
+        signup.addActionListener(this);
         add(signup);
         //===========================Creating label=========================================================
         // ===================background color==============================
@@ -71,9 +82,17 @@ public class Login extends JFrame implements ActionListener{
          // ======== adding height and width =========
     }
 
-    // =========================================================
+    // =========================WHEN BUTTON WILL BE CLICKED THE ACTIONS WILL PERFORM IN THIS SECTION================================
     public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource() == clear) {
+        cardTextField.setText("");
+        pinTextField.setText("");
 
+        }else if (ae.getSource() == login) {
+            
+        }else if (ae.getSource() == signup) {
+            
+        }
     }
     public static void main(String[] args) {
         new Login();
