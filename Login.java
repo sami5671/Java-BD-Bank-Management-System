@@ -1,10 +1,12 @@
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
-public class Login extends JFrame {
+public class Login extends JFrame implements ActionListener{
     Login(){  //its a constructor
         setTitle("BANGLADESH CENTRAL BANK");
         setLayout(null);
@@ -14,7 +16,7 @@ public class Login extends JFrame {
         ImageIcon i3 = new ImageIcon(i2);
         JLabel label = new JLabel(i3);
     
-        // =============set locaation of logo   ============= 
+        // =============set location of logo   ============= 
         label.setBounds(70,10, 100, 100);
         add(label);
         // =========adding logo =========
@@ -67,6 +69,11 @@ public class Login extends JFrame {
         setVisible(true);
         setLocation(350, 200);
          // ======== adding height and width =========
+    }
+
+    // =========================================================
+    public void actionPerformed(ActionEvent ae) {
+
     }
     public static void main(String[] args) {
         new Login();
